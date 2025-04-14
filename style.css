@@ -1,0 +1,15 @@
+.btn{
+    display: inline;
+    padding: 10px;
+    background-color: rgb(146, 37, 37);
+    color: white;
+    border-radius: 15px;
+}
+.btn a{
+    color: white;
+    text-decoration: none;
+}
+
+table{
+    border-spacing: 20px;
+}
