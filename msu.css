@@ -1,0 +1,16 @@
+.emailContainer{
+    display: flex;
+}
+
+.btn{
+    border: 1px solid black;
+    line-height: 25px;
+    border-radius: 15px;
+    margin: 4px;
+    padding: 4px;
+    height: 30px;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
