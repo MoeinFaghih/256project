@@ -2,7 +2,8 @@
     if(isset($_POST["email"])){
         extract($_POST) ;
         require "./db.php" ;
-        $stmt = $db->prepare("insert into markets value(?,?,?,?,?)") ;
+        $stmt = $db->prepare("insert into markets (email, name, pass, city, district)
+                            value(?,?,?,?,?)") ;
         $stmt->execute([$email, $name, password_hash($password, PASSWORD_BCRYPT), $city, $district]) ;
         
         header("location: marketLogin.php") ;
