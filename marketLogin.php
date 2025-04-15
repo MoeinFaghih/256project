@@ -32,6 +32,8 @@
         <button type="submit">login</button>
     </form>
 
+    <a href="./marketSignUp.php">Sign Up</a>
+
     <?php if(isset($failed)):?>
         <h3>Wrong Credentials!</h3>
     <?php endif ?>
