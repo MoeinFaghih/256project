@@ -1,6 +1,6 @@
 <?php
     session_start() ;
-    require "./protect.php" ;
+    require __DIR__ . "/../utility/protect-market.php" ;
 
     session_destroy() ;
     setcookie("PHPSESSID", "", 1, "/") ;

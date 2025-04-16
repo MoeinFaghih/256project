@@ -1,14 +1,14 @@
 <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-        require "./db.php" ;
-        require "./lib.php" ;
+        require __DIR__ . "/../utility/db.php" ;
+        require __DIR__ . "/../utility/lib.php" ;
         extract($_POST) ;
         session_start() ;
 
         
         getMarketByEmail($email, $user) ;
         if($user && password_verify($password, $user["pass"])){
-                $_SESSION["user"] = $user ;
+                $_SESSION["market"] = $user ;
                 header("location: marketMain.php") ;
         }
         else{

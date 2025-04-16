@@ -1,5 +1,5 @@
 <?php
-    require_once "./db.php" ;
+    require __DIR__ . "/../utility/db.php"  ;
     function getMarketByEmail($email, &$user){
 
         global $db;

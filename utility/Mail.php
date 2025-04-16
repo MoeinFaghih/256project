@@ -6,9 +6,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require_once './vendor/autoload.php' ;
+//require __DIR__ . "/../vendor/autoload.php" ;
 
-require "config.php" ; 
+require __DIR__ . "/../config.php" ;
 
 class Mail {
     public static function send($to, $subject, $message) {

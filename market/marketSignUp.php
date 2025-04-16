@@ -10,7 +10,7 @@
             $error = "Verification Code has been expired!" ;
         }
         else{
-            require "./db.php" ;
+            require __DIR__ . "/../utility/db.php" ;
             $stmt = $db->prepare("insert into markets (email, name, pass, city, district)
                                 value(?,?,?,?,?)") ;
             $stmt->execute([$email, $name, password_hash($password, PASSWORD_BCRYPT), $city, $district]) ;

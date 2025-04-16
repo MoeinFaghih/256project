@@ -1,7 +1,7 @@
 <?php
     session_start() ;
-    require "./protect.php" ;
-    require_once "./db.php" ;
+    require __DIR__ . "/../utility/protect-market.php" ;
+    require __DIR__ . "/../utility/db.php" ;
     extract($_SESSION) ;
     //var_dump($user) ;
 
@@ -60,6 +60,7 @@
                             <?= $p["discounted_price"] ?>
                             <?= $p["expiry_date"] ?>
                             <div class="btn"><a href="delete-product.php?id=<?=$p["id"]?>">Delete</a></div>
+                            <div class="btn"><a href="edit-product.php?id=<?=$p["id"]?>">Edit</a></div>
                         </td>
                     </tr>
                 <?php endforeach; ?>

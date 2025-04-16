@@ -1,10 +1,10 @@
 <?php
     session_start() ;
 
-    require "./protect.php" ;
+    require __DIR__ . "/../utility/protect-market.php" ;
 
     if($_SERVER["REQUEST_METHOD"] === "POST"){   //validation to be done here
-        require "./db.php" ;
+        require __DIR__ . "/../utility/db.php" ;
         extract($_POST) ;
         $qs = "update markets
                 set
@@ -15,19 +15,19 @@
                 where email = ? 
                 " ;
         $stmt = $db->prepare($qs) ;
-        $stmt->execute([$email, $name, $city, $district, $_SESSION["user"]["email"]]) ;
+        $stmt->execute([$email, $name, $city, $district, $_SESSION["market"]["email"]]) ;
         
-        $_SESSION["user"]["name"] = $name ;
-        $_SESSION["user"]["email"] = $email ;
-        $_SESSION["user"]["city"] = $city ;
-        $_SESSION["user"]["district"] = $district ;
+        $_SESSION["market"]["name"] = $name ;
+        $_SESSION["market"]["email"] = $email ;
+        $_SESSION["market"]["city"] = $city ;
+        $_SESSION["market"]["district"] = $district ;
 
 
         header("location: marketMain.php") ;
         exit;
     }
 
-    extract($_SESSION["user"]) ;
+    extract($_SESSION["market"]) ;
 ?>
 
 <!DOCTYPE html>

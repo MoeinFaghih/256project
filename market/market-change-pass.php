@@ -1,8 +1,8 @@
 <?php
     session_start() ;
-    require "./protect.php" ;
+    require __DIR__ . "/../utility/protect-market.php" ;
 
-    extract($_SESSION["user"]) ;
+    extract($_SESSION["market"]) ;
 
 ?>
 <!DOCTYPE html>

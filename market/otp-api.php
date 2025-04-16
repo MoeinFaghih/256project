@@ -13,8 +13,8 @@
         $code = rand(100000, 999999); // 6-digit code
         $_SESSION['otp'] = ["code"=>$code, "expiry"=>time()+120];
 
-        require_once './vendor/autoload.php';
-        require_once './Mail.php';
+        require __DIR__ . "/../vendor/autoload.php" ;
+        require_once __DIR__ . "/../utility/Mail.php" ;
 
         Mail::send($data['email'], "Your Verification Code", "<p>Your code is <strong>$code</strong></p>");
 
