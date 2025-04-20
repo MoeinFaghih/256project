@@ -2,6 +2,13 @@
     session_start() ;
     require "./protect_buyer.php" ;
     extract($_SESSION) ;
+    require "../utility/db.php" ;
+
+    if(isset($_POST["keyword"])){
+        $stmt = $db->prepare("select * from products p, markets m where p.owner = m.id and title like ? and NOW() < expiry_date and LOWER(m.city) = ? ");    
+        $stmt->execute(['%'.strtolower($_POST["keyword"]).'%', $buyer["city"]]) ;
+        $list = $stmt->fetchAll(PDO::FETCH_ASSOC) ;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +29,6 @@
             <button type="submit">search</button>
         </form>
     </div>
-    <form action=""></form>
+    <?php if(isset($list)) var_dump($list); ?>
 </body>
 </html>
