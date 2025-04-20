@@ -6,7 +6,7 @@
     //var_dump($user) ;
 
     $stmt = $db->prepare("select * from products where owner = ?") ;
-    $stmt->execute([$user["id"]]) ;
+    $stmt->execute([$market["id"]]) ;
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC) ;
     //var_dump($products) ;
 ?>
@@ -22,10 +22,10 @@
 </head>
 <body>
     <h2>Market Main</h2>
-    <p><?= $user["name"]?></p>
-    <p><?= $user["email"]?></p>
-    <p><?= $user["city"]?></p>
-    <p><?= $user["district"]?></p>
+    <p><?= $market["email"]?></p>
+    <p><?= $market["name"]?></p>
+    <p><?= $market["city"]?></p>
+    <p><?= $market["district"]?></p>
     <hr>
     <form action="./market-add-product.php" method="POST">
         <div>
