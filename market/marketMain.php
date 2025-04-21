@@ -59,8 +59,8 @@
                             <?= $p["normal_price"] ?>
                             <?= $p["discounted_price"] ?>
                             <?= $p["expiry_date"] ?>
-                            <div class="btn"><a href="delete-product.php?id=<?=$p["id"]?>">Delete</a></div>
-                            <div class="btn"><a href="edit-product.php?id=<?=$p["id"]?>">Edit</a></div>
+                            <div class="btn"><a href="delete-product.php?id=<?=$p["product_id"]?>">Delete</a></div>
+                            <div class="btn"><a href="edit-product.php?id=<?=$p["product_id"]?>">Edit</a></div>
                         </td>
                     </tr>
                 <?php endforeach; ?>

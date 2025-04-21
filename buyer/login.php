@@ -6,7 +6,7 @@
         session_start() ;
 
         
-        getMarketByEmail($email, $user) ;
+        getBuyerByEmail($email, $user) ;
         if($user && password_verify($password, $user["pass"])){
                 $_SESSION["buyer"] = $user ;
                 header("location: index.php") ;
